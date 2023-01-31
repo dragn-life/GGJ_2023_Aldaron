@@ -1,0 +1,1 @@
+'Sample_Customizing Scene' Scene supports resolution '1440x2960'.
