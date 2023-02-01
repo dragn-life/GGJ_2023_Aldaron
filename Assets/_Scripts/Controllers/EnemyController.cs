@@ -32,6 +32,11 @@ public class EnemyController : MonoBehaviour
     _currentState.OnUpdate(this);
   }
 
+  private void LateUpdate()
+  {
+    _currentState.OnLateUpdate(this);
+  }
+
   public void SwitchState(BaseEnemyState newState)
   {
     _currentState = newState;
