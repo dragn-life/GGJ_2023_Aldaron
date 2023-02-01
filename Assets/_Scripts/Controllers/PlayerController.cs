@@ -19,8 +19,7 @@ public class PlayerController : MonoBehaviour
 
   [SerializeField] private float moveSpeed = 10f;
 
-  [SerializeField] private CinemachineFreeLook mainCamera;
-  [SerializeField] private CinemachineFreeLook aimCamera;
+  [SerializeField] private CameraReferences cameraReferences;
 
   private BasePlayerState _lastState;
   private BasePlayerState _currentState;
@@ -76,12 +75,12 @@ public class PlayerController : MonoBehaviour
   {
     if (Input.GetButtonDown("Fire2"))
     {
-      aimCamera.Priority = 3;
+      cameraReferences.aimCamera.Priority = 3;
     }
 
     if (Input.GetButtonUp("Fire2"))
     {
-      aimCamera.Priority = 1;
+      cameraReferences.aimCamera.Priority = 1;
     }
   }
 
