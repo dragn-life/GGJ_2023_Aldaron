@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using _Scripts.States;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace _Scripts.Managers
     public GameVictoryState GameVictoryState { get; } = new GameVictoryState();
     public GameOverState GameOverState { get; } = new GameOverState();
 
+    [SerializeField] private float startGameDelay = 3.0f;
     public event Action StartGameEvent;
     public event Action VictoryEvent;
     public event Action GameOverEvent;
@@ -19,13 +21,24 @@ namespace _Scripts.Managers
 
     private void OnEnable()
     {
-      SwitchState(StartState);
+      SwitchState(StartState, startGameDelay);
     }
 
     public void SwitchState(BaseGameState newState)
     {
       _currentState = newState;
       _currentState.EnterState(this);
+    }
+
+    public void SwitchState(BaseGameState newState, float delay)
+    {
+      StartCoroutine(SwitchStateCoroutine(newState, delay));
+    }
+
+    private IEnumerator SwitchStateCoroutine(BaseGameState newState, float delay)
+    {
+      yield return new WaitForSeconds(delay);
+      SwitchState(newState);
     }
 
     public void WinGame()

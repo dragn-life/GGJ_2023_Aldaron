@@ -51,9 +51,12 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void SubscribeToGameEvents()
   {
-    GameManager.StartGameEvent += StartGame;
-    GameManager.VictoryEvent += GameOver;
-    GameManager.GameOverEvent += GameOver;
+    if (GameManager)
+    {
+      GameManager.StartGameEvent += StartGame;
+      GameManager.VictoryEvent += GameOver;
+      GameManager.GameOverEvent += GameOver;
+    }
   }
 
   private void StartGame()
