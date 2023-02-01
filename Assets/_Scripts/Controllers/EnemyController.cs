@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour, IDamageable
   public EnemyFindTargetState FindTargetState { get; } = new EnemyFindTargetState();
   public EnemyEatTreeState EatTreeState { get; } = new EnemyEatTreeState();
   public EnemyDamageState DamageState { get; } = new EnemyDamageState();
+  public EnemyDeathState DeathState { get; } = new EnemyDeathState();
 
   [SerializeField] private Transform destination;
 
@@ -23,6 +24,7 @@ public class EnemyController : MonoBehaviour, IDamageable
   [SerializeField] private int attackStrength = 2;
 
   public IDamageable damageableTarget;
+
   // public int Health { get; private set; }
   public int Health;
   public Animator Animator { get; private set; }
@@ -105,6 +107,11 @@ public class EnemyController : MonoBehaviour, IDamageable
     Health = MAX_HEALTH;
   }
 
+  public void DestroySelf(float delay)
+  {
+    Destroy(gameObject, delay);
+  }
+
   public void GotoDestination()
   {
     _navMeshAgent.destination = destination.position;
@@ -142,6 +149,13 @@ public class EnemyController : MonoBehaviour, IDamageable
   public void TakeDamage(int amount)
   {
     Health -= amount;
-    SwitchState(DamageState);
+    if (Health > 0)
+    {
+      SwitchState(DamageState);
+    }
+    else
+    {
+      SwitchState(DeathState);
+    }
   }
 }

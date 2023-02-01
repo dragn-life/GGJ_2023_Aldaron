@@ -1842,6 +1842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10be87ce0b41664fa5685693ddcc0d5, type: 3}
+--- !u!4 &1082567734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5438147470790940112, guid: f10be87ce0b41664fa5685693ddcc0d5, type: 3}
+  m_PrefabInstance: {fileID: 1082567733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1082567738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,7 +2478,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746851790}
-  m_LocalRotation: {x: -0.011082698, y: 5.3766647e-10, z: 5.9591602e-12, w: 0.9999386}
+  m_LocalRotation: {x: -0.011082698, y: -5.3766647e-10, z: -5.9591602e-12, w: 0.9999386}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3333,7 +3338,7 @@ PrefabInstance:
     - target: {fileID: 666084786838115661, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
       propertyPath: destination
       value: 
-      objectReference: {fileID: 263266442}
+      objectReference: {fileID: 1082567734}
     - target: {fileID: 666084786838115661, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
       propertyPath: attackInterval
       value: 2
