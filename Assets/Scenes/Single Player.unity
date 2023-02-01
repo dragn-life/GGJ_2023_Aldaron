@@ -465,7 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 3233661733189168862, guid: 9ac66f86037904706931750be45b0f43, type: 3}
   arrowSpawnPosition: {fileID: 1543869615}
-  arrowForce: 200
+  arrowForce: 500
   arrowShootDelay: 1.5
   moveSpeed: 10
   mainCamera: {fileID: 865785486}
@@ -1294,20 +1294,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 666084786838082493, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
   m_PrefabInstance: {fileID: 666084786375471196}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &804594658
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804594657}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.2715899
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.63719106, z: 0}
 --- !u!195 &804594659
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1338,14 +1324,28 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804594657}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!136 &804594661
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804594657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.3357757
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.664034, z: 0}
 --- !u!1 &824591721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1784,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2274408454698489512, guid: f10be87ce0b41664fa5685693ddcc0d5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5438147470790576624, guid: f10be87ce0b41664fa5685693ddcc0d5, type: 3}
       propertyPath: m_Name
       value: Tree
@@ -1838,11 +1842,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10be87ce0b41664fa5685693ddcc0d5, type: 3}
---- !u!4 &1082567734 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5438147470790940112, guid: f10be87ce0b41664fa5685693ddcc0d5, type: 3}
-  m_PrefabInstance: {fileID: 1082567733}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1082567738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1856,6 +1855,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!65 &1082567739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140094608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7560238, y: 2.5181644, z: 3.2041626}
+  m_Center: {x: 0.53074855, y: 1.2142342, z: 0.010881661}
+--- !u!54 &1082567740
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140094608}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1130208640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2194,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526372564}
-  m_LocalRotation: {x: 0.25666794, y: -0.0000000033791123, z: 8.973711e-10, w: 0.9664997}
+  m_LocalRotation: {x: 0.2566679, y: 0.000000029001464, z: -0.000000007701757, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3305,7 +3333,7 @@ PrefabInstance:
     - target: {fileID: 666084786838115661, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
       propertyPath: destination
       value: 
-      objectReference: {fileID: 1082567734}
+      objectReference: {fileID: 263266442}
     - target: {fileID: 666084786838115661, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
       propertyPath: attackInterval
       value: 2

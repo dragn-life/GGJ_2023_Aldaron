@@ -6,13 +6,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDamageable
 {
   private static int MAX_HEALTH = 100;
 
   public EnemyStartState StartState { get; } = new EnemyStartState();
   public EnemyFindTargetState FindTargetState { get; } = new EnemyFindTargetState();
   public EnemyEatTreeState EatTreeState { get; } = new EnemyEatTreeState();
+  public EnemyDamageState DamageState { get; } = new EnemyDamageState();
 
   [SerializeField] private Transform destination;
 
@@ -22,11 +23,14 @@ public class EnemyController : MonoBehaviour
   [SerializeField] private int attackStrength = 2;
 
   public IDamageable damageableTarget;
-  public int Health { get; private set; }
+  // public int Health { get; private set; }
+  public int Health;
   public Animator Animator { get; private set; }
 
   private NavMeshAgent _navMeshAgent;
+
   private BaseEnemyState _currentState;
+  private BaseEnemyState _lastState;
 
   private void OnEnable()
   {
@@ -57,6 +61,7 @@ public class EnemyController : MonoBehaviour
 
   public void SwitchState(BaseEnemyState newState)
   {
+    _lastState = _currentState;
     _currentState = newState;
     _currentState.EnterState(this);
   }
@@ -70,6 +75,29 @@ public class EnemyController : MonoBehaviour
   {
     yield return new WaitForSeconds(delay);
     SwitchState(newState);
+  }
+
+  public void SwitchToLastState()
+  {
+    if (_lastState == null)
+    {
+      Debug.Log("Last State was Null");
+      return;
+    }
+
+    _currentState = _lastState;
+    _currentState.EnterState(this);
+  }
+
+  public void SwitchToLastState(float delay)
+  {
+    StartCoroutine(SwitchToLastStateCoroutine(delay));
+  }
+
+  private IEnumerator SwitchToLastStateCoroutine(float delay)
+  {
+    yield return new WaitForSeconds(delay);
+    SwitchToLastState();
   }
 
   public void ResetEnemy()
@@ -109,5 +137,11 @@ public class EnemyController : MonoBehaviour
   public void EatTree()
   {
     damageableTarget.TakeDamage(attackStrength);
+  }
+
+  public void TakeDamage(int amount)
+  {
+    Health -= amount;
+    SwitchState(DamageState);
   }
 }
