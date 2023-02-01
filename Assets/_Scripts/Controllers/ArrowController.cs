@@ -7,10 +7,10 @@ public class ArrowController : MonoBehaviour
   private void OnCollisionEnter(Collision collision)
   {
     // Debug.Log("Arrow Collided: " + collision.gameObject.name);
-    IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
-    if (damageable != null)
+    EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+    if (enemy != null)
     {
-      damageable.TakeDamage(ArrowStrength);
+      enemy.TakeDamage(ArrowStrength);
       // Destroy Arrow Right Away if hits target, else other scripts will destroy it
       Destroy(gameObject, 0.2f);
     }
