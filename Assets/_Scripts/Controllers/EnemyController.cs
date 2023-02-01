@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour, IDamageable
   public int Health;
   public Animator Animator { get; private set; }
 
-  private NavMeshAgent _navMeshAgent;
+  public NavMeshAgent navMeshAgent { get; private set; }
 
   private BaseEnemyState _currentState;
   private BaseEnemyState _lastState;
@@ -44,8 +44,13 @@ public class EnemyController : MonoBehaviour, IDamageable
   private void OnEnable()
   {
     Animator = GetComponent<Animator>();
-    _navMeshAgent = GetComponent<NavMeshAgent>();
+    navMeshAgent = GetComponent<NavMeshAgent>();
 
+    SubscribeToGameEvents();
+  }
+
+  public void SubscribeToGameEvents()
+  {
     GameManager.StartGameEvent += StartGame;
     GameManager.VictoryEvent += GameOver;
     GameManager.GameOverEvent += GameOver;
@@ -134,7 +139,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void GotoDestination()
   {
-    _navMeshAgent.destination = destination.position;
+    navMeshAgent.destination = destination.position;
   }
 
   public void SetNextDestination(Transform nextDestination)

@@ -7,6 +7,7 @@ namespace _Scripts.States.Enemy
     public override void EnterState(EnemyController enemy)
     {
       // Debug.Log("Enter Death State");
+      enemy.navMeshAgent.speed = 0.0f;
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.Animator.SetTrigger("Die");
       enemy.FreezeAnimation(1.3f);

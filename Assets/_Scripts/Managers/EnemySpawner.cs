@@ -65,10 +65,15 @@ public class EnemySpawner : MonoBehaviour
 
   private void SpawnEnemy(Transform target)
   {
+    if (!_isSpawning)
+    {
+      return;
+    }
     EnemyController selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
     Transform spawnLocation = spawnLocations[Random.Range(0, spawnLocations.Count)];
     EnemyController unit = Instantiate(selectedEnemy, spawnLocation);
     unit.GameManager = gameManager;
+    unit.SubscribeToGameEvents();
     unit.SetNextDestination(target);
     unit.SwitchState(unit.StartState);
   }
