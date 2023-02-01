@@ -2,12 +2,14 @@ using UnityEngine;
 
 namespace _Scripts.States.Enemy
 {
-  public class EnemyStartState : BaseEnemyState
+  public class EnemyEatTreeState : BaseEnemyState
   {
     public override void EnterState(EnemyController enemy)
     {
-      enemy.ResetEnemy();
-      enemy.SwitchState(enemy.FindTargetState);
+      enemy.Animator.SetBool("Walk Forward", false);
+      enemy.Animator.SetTrigger("Punch");
+      enemy.EatTree();
+      enemy.SwitchState(enemy.FindTargetState, 2.0f);
     }
 
     public override void OnUpdate(EnemyController enemy)
@@ -22,7 +24,7 @@ namespace _Scripts.States.Enemy
 
     public override void OnCollisionEnter(Collision collision, EnemyController enemy)
     {
-      //no-op
+      // TODO: Check Arrows
     }
   }
 }
