@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
 
   public Animator Animator { get; private set; }
 
+  [SerializeField] private GameObject arrowPrefab;
+  [SerializeField] private Transform arrowSpawnPosition;
+  [SerializeField] private float arrowForce = 200f;
+  public float arrowShootDelay = 1.5f;
+
   [SerializeField] private float moveSpeed = 10f;
 
   private BasePlayerState _currentState;
@@ -42,8 +47,10 @@ public class PlayerController : MonoBehaviour
 
   public void ShootArrow()
   {
-    // TODO: Spawn Arrow Prefab
-    
+    GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPosition.position, arrowPrefab.transform.rotation);
+    Rigidbody arrowRigidbody = arrow.GetComponent<Rigidbody>();
+    arrowRigidbody.AddForce(arrowSpawnPosition.transform.forward * arrowForce, ForceMode.Impulse);
+
     SwitchState(IdleState);
   }
 
