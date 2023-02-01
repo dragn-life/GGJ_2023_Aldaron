@@ -1,14 +1,15 @@
+using _Scripts.Managers;
 using UnityEngine;
 
 namespace _Scripts.Controllers
 {
   public class TreeController : MonoBehaviour, IDamageable
   {
-    public int health = 100;
+    [SerializeField] private AncientTreeManager treeManager;
 
     public void TakeDamage(int amount)
     {
-      health -= amount;
+      treeManager.TakeDamage(amount);
     }
   }
 }
