@@ -1,4 +1,6 @@
+using System;
 using _Scripts.States.Player;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -17,6 +19,10 @@ public class PlayerController : MonoBehaviour
 
   [SerializeField] private float moveSpeed = 10f;
 
+  [SerializeField] private CinemachineFreeLook mainCamera;
+  [SerializeField] private CinemachineFreeLook aimCamera;
+
+  private BasePlayerState _lastState;
   private BasePlayerState _currentState;
   private Camera _currentCamera;
 
@@ -34,15 +40,49 @@ public class PlayerController : MonoBehaviour
     _currentState.OnUpdate(this);
   }
 
+  private void LateUpdate()
+  {
+    _currentState.OnLateUpdate(this);
+  }
+
+  public void AimWithCamera()
+  {
+    Vector3 lookDirection = _currentCamera.transform.forward;
+    lookDirection.y = 0;
+
+    Quaternion rotation = Quaternion.LookRotation(lookDirection);
+    transform.rotation = rotation;
+  }
+
   public void SwitchState(BasePlayerState state)
   {
+    _lastState = _currentState;
     _currentState = state;
+    _currentState.EnterState(this);
+  }
+
+  public void SwitchToLastState()
+  {
+    _currentState = _lastState;
     _currentState.EnterState(this);
   }
 
   public bool CheckShooting()
   {
     return Input.GetButtonDown("Fire1");
+  }
+
+  public void HandleAim()
+  {
+    if (Input.GetButtonDown("Fire2"))
+    {
+      aimCamera.Priority = 3;
+    }
+
+    if (Input.GetButtonUp("Fire2"))
+    {
+      aimCamera.Priority = 1;
+    }
   }
 
   public void ShootArrow()

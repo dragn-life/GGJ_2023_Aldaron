@@ -19,5 +19,12 @@ public class PlayerIdleState : BasePlayerState
     {
       player.SwitchState(player.ShootState);
     }
+
+    player.HandleAim();
+  }
+
+  public override void OnLateUpdate(PlayerController player)
+  {
+    player.AimWithCamera();
   }
 }

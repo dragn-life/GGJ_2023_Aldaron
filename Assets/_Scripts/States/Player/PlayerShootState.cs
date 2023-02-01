@@ -12,6 +12,11 @@ public class PlayerShootState : BasePlayerState
 
   public override void OnUpdate(PlayerController player)
   {
-    //no-op
+    player.HandleAim();
+  }
+
+  public override void OnLateUpdate(PlayerController player)
+  {
+    player.AimWithCamera();
   }
 }
