@@ -1,21 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerIdleState : BasePlayerState
 {
   public override void EnterState(PlayerController player)
   {
-    player.Animator.SetBool("run", false);
+    player.ResetAnimations();
     player.Animator.SetBool("idle2", true);
   }
 
   public override void OnUpdate(PlayerController player)
   {
-    player.MovePlayer();
-    if (player.IsPlayerMoving)
+    if (player.MovePlayer())
     {
       player.SwitchState(player.MoveState);
+    }
+
+    if (player.CheckShooting())
+    {
+      player.SwitchState(player.ShootState);
     }
   }
 }
