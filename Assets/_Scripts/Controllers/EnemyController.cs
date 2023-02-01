@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   [SerializeField] private int attackStrength = 2;
 
+  public bool ShouldBeDead;
   public GameManager GameManager;
   public IDamageable DamageableTarget;
   public float attackInterval = 5.0f;
@@ -66,6 +67,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   private void GameOver()
   {
+    ShouldBeDead = true;
     SwitchState(DeathState);
   }
 

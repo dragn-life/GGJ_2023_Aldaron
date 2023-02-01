@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using _Scripts.States;
+using Coherence.Runtime;
 using UnityEngine;
 
 namespace _Scripts.Managers
@@ -43,12 +44,18 @@ namespace _Scripts.Managers
 
     public void WinGame()
     {
-      SwitchState(GameVictoryState);
+      if (_currentState == PlayState)
+      {
+        SwitchState(GameVictoryState);
+      }
     }
 
     public void LoseGame()
     {
-      SwitchState(GameOverState);
+      if (_currentState == PlayState)
+      {
+        SwitchState(GameOverState);
+      }
     }
 
     public void TriggerStartGameEvent()

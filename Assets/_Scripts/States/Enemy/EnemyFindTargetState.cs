@@ -7,6 +7,11 @@ namespace _Scripts.States.Enemy
     public override void EnterState(EnemyController enemy)
     {
       // Debug.Log("Enter Find Target State");
+      if (enemy.ShouldBeDead)
+      {
+        enemy.SwitchState(enemy.DeathState);
+        return;
+      }
       enemy.Animator.SetBool("Walk Forward", true);
 
       // If target is already found, trigger eat
