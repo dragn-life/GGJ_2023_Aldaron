@@ -11,5 +11,10 @@ namespace _Scripts.States.Player
     {
       // no-op
     }
+
+    public override void OnLateUpdate(PlayerController player)
+    {
+      // no-op
+    }
   }
 }

@@ -14,4 +14,9 @@ public class PlayerShootState : BasePlayerState
   {
     player.HandleAim();
   }
+
+  public override void OnLateUpdate(PlayerController player)
+  {
+    player.AimWithCamera();
+  }
 }

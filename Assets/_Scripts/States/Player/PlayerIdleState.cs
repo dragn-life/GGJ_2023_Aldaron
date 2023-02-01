@@ -22,4 +22,9 @@ public class PlayerIdleState : BasePlayerState
 
     player.HandleAim();
   }
+
+  public override void OnLateUpdate(PlayerController player)
+  {
+    player.AimWithCamera();
+  }
 }

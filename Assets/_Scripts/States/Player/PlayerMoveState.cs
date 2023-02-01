@@ -19,6 +19,12 @@ public class PlayerMoveState : BasePlayerState
     {
       player.SwitchState(player.ShootState);
     }
+
     player.HandleAim();
+  }
+
+  public override void OnLateUpdate(PlayerController player)
+  {
+    player.AimWithCamera();
   }
 }

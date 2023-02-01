@@ -1,3 +1,4 @@
+using System;
 using _Scripts.States.Player;
 using Cinemachine;
 using UnityEngine;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
   public float arrowShootDelay = 1.5f;
 
   [SerializeField] private float moveSpeed = 10f;
-  
+
   [SerializeField] private CinemachineFreeLook mainCamera;
   [SerializeField] private CinemachineFreeLook aimCamera;
 
@@ -37,6 +38,20 @@ public class PlayerController : MonoBehaviour
   void Update()
   {
     _currentState.OnUpdate(this);
+  }
+
+  private void LateUpdate()
+  {
+    _currentState.OnLateUpdate(this);
+  }
+
+  public void AimWithCamera()
+  {
+    Vector3 lookDirection = _currentCamera.transform.forward;
+    lookDirection.y = 0;
+
+    Quaternion rotation = Quaternion.LookRotation(lookDirection);
+    transform.rotation = rotation;
   }
 
   public void SwitchState(BasePlayerState state)

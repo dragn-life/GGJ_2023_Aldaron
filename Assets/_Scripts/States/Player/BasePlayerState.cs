@@ -6,4 +6,5 @@ public abstract class BasePlayerState
 {
   public abstract void EnterState(PlayerController player);
   public abstract void OnUpdate(PlayerController player);
+  public abstract void OnLateUpdate(PlayerController player);
 }
