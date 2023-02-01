@@ -9,6 +9,7 @@ namespace _Scripts.Managers
   {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private AncientTreeManager treeManager;
+    [SerializeField] private CountDownManager countDownManager;
 
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject gameOverScreen;
@@ -23,6 +24,13 @@ namespace _Scripts.Managers
       gameManager.StartGameEvent += SetupPlayHud;
       gameManager.VictoryEvent += SetupVictoryHud;
       gameManager.GameOverEvent += SetupGameOverHud;
+
+      countDownManager.TimeChangeEvent += UpdateCountdown;
+    }
+
+    private void UpdateCountdown(float time)
+    {
+      countdown.text = "Time Until Dawn: " + time;
     }
 
     private void OnDisable()
