@@ -6,10 +6,11 @@ namespace _Scripts.States.Enemy
   {
     public override void EnterState(EnemyController enemy)
     {
-      enemy.PlayDeathEffects();
+      // Debug.Log("Enter Death State");
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.Animator.SetTrigger("Die");
-      enemy.Animator.StopPlayback();
+      enemy.FreezeAnimation(1.3f);
+      enemy.PlayDeathEffects();
       enemy.DestroySelf(5f);
     }
 

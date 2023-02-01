@@ -6,6 +6,7 @@ namespace _Scripts.States.Enemy
   {
     public override void EnterState(EnemyController enemy)
     {
+      // Debug.Log("Enter Start State");
       enemy.ResetEnemy();
       enemy.SwitchState(enemy.FindTargetState);
     }

@@ -35,6 +35,8 @@ public class EnemyController : MonoBehaviour, IDamageable
   private BaseEnemyState _currentState;
   private BaseEnemyState _lastState;
 
+  private bool _canTakeDamage = true;
+
   private void OnEnable()
   {
     Animator = GetComponent<Animator>();
@@ -144,7 +146,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void EatTree()
   {
-    damageableTarget.TakeDamage(attackStrength);
+    damageableTarget?.TakeDamage(attackStrength);
   }
 
   public void PlayDeathEffects()
@@ -152,16 +154,39 @@ public class EnemyController : MonoBehaviour, IDamageable
     Instantiate(deathParticle, transform);
   }
 
+  public void FreezeAnimation()
+  {
+    Animator.speed = 0.0f;
+  }
+
+  public void FreezeAnimation(float delay)
+  {
+    Invoke(nameof(FreezeAnimation), delay);
+  }
+
   public void TakeDamage(int amount)
   {
-    Health -= amount;
-    if (Health > 0)
+    const float debounceTime = 1.0f;
+
+    if (_canTakeDamage)
     {
-      SwitchState(DamageState);
+      _canTakeDamage = false;
+      Health -= amount;
+      // Debug.Log("Enemy Health" + Health);
+      if (Health > 0)
+      {
+        SwitchState(DamageState);
+        Invoke(nameof(EnableCanTakeDamage), debounceTime);
+      }
+      else
+      {
+        SwitchState(DeathState);
+      }
     }
-    else
-    {
-      SwitchState(DeathState);
-    }
+  }
+
+  private void EnableCanTakeDamage()
+  {
+    _canTakeDamage = true;
   }
 }

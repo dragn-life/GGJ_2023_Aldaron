@@ -6,6 +6,7 @@ namespace _Scripts.States.Enemy
   {
     public override void EnterState(EnemyController enemy)
     {
+      // Debug.Log("Enter Damage State");
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.Animator.SetTrigger("Take Damage");
       enemy.SwitchState(enemy.FindTargetState, 1.0f);

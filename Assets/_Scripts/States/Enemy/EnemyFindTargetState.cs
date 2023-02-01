@@ -6,6 +6,7 @@ namespace _Scripts.States.Enemy
   {
     public override void EnterState(EnemyController enemy)
     {
+      // Debug.Log("Enter Find Target State");
       enemy.Animator.SetBool("Walk Forward", true);
 
       // If target is already found, trigger eat

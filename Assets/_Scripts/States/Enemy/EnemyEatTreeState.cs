@@ -6,6 +6,7 @@ namespace _Scripts.States.Enemy
   {
     public override void EnterState(EnemyController enemy)
     {
+      // Debug.Log("Enter Eat Tree State");
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.Animator.SetTrigger("Punch");
       enemy.EatTree();
