@@ -10,7 +10,7 @@ namespace _Scripts.States.Enemy
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.Animator.SetTrigger("Punch");
       enemy.EatTree();
-      enemy.SwitchState(enemy.FindTargetState, 2.0f);
+      enemy.SwitchState(enemy.FindTargetState, enemy.attackInterval);
     }
 
     public override void OnUpdate(EnemyController enemy)

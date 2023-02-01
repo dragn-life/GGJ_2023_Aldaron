@@ -777,8 +777,9 @@ MonoBehaviour:
   spawnParticle: {fileID: 7922615937188239994, guid: b3746752069604571a66afe33e2d4f5a, type: 3}
   deathParticle: {fileID: 4066582667809357706, guid: 0b55ae5d5e73f4605bc676300cc8cfe3, type: 3}
   destination: {fileID: 0}
-  attackInterval: 2
-  attackStrength: 2
+  attackStrength: 10
+  GameManager: {fileID: 0}
+  attackInterval: 3
   Health: 0
 --- !u!54 &804594660
 Rigidbody:

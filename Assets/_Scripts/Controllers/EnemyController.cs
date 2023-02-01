@@ -23,12 +23,12 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   [SerializeField] private Transform destination;
 
-  [SerializeField] private float attackInterval = 5.0f;
 
   [SerializeField] private int attackStrength = 2;
 
   public GameManager GameManager;
   public IDamageable DamageableTarget;
+  public float attackInterval = 5.0f;
 
   // public int Health { get; private set; }
   public int Health;
