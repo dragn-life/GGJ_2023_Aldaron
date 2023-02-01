@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be2abde407bb4b34896bc06a10e9171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArrowStrength: 25
+  ArrowStrength: 50
 --- !u!1001 &4531873512438668450
 PrefabInstance:
   m_ObjectHideFlags: 0

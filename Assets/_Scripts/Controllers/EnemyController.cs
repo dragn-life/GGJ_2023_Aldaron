@@ -16,10 +16,11 @@ public class EnemyController : MonoBehaviour, IDamageable
   public EnemyDamageState DamageState { get; } = new EnemyDamageState();
   public EnemyDeathState DeathState { get; } = new EnemyDeathState();
 
+  [SerializeField] private GameObject deathParticle;
+
   [SerializeField] private Transform destination;
 
-  [FormerlySerializedAs("attackDelay")] [SerializeField]
-  private float attackInterval = 5.0f;
+  [SerializeField] private float attackInterval = 5.0f;
 
   [SerializeField] private int attackStrength = 2;
 
@@ -144,6 +145,11 @@ public class EnemyController : MonoBehaviour, IDamageable
   public void EatTree()
   {
     damageableTarget.TakeDamage(attackStrength);
+  }
+
+  public void PlayDeathEffects()
+  {
+    Instantiate(deathParticle, transform);
   }
 
   public void TakeDamage(int amount)
