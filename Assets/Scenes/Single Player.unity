@@ -461,7 +461,10 @@ MonoBehaviour:
   arrowPrefab: {fileID: 3233661733189168862, guid: 9ac66f86037904706931750be45b0f43, type: 3}
   arrowSpawnPosition: {fileID: 1543869615}
   arrowForce: 200
+  arrowShootDelay: 1.5
   moveSpeed: 10
+  mainCamera: {fileID: 865785486}
+  aimCamera: {fileID: 1982597408}
 --- !u!4 &263266442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4011645816403010, guid: 6354b06cff88e854381e12b153e9c573, type: 3}
@@ -1991,7 +1994,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526372564}
-  m_LocalRotation: {x: 0.25666794, y: -0.0000000033791123, z: 8.973711e-10, w: 0.9664997}
+  m_LocalRotation: {x: 0.2566679, y: 0.000000029001464, z: -0.000000007701757, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

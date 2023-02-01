@@ -19,5 +19,6 @@ public class PlayerMoveState : BasePlayerState
     {
       player.SwitchState(player.ShootState);
     }
+    player.HandleAim();
   }
 }

@@ -19,5 +19,7 @@ public class PlayerIdleState : BasePlayerState
     {
       player.SwitchState(player.ShootState);
     }
+
+    player.HandleAim();
   }
 }
