@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "8b3cb0a37f973eee5af49a30f864b39078f86e0a";
+		public const string schemaId = "83d2e3b46acc98b1e1a39f646522a669ddb109cc";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -119,6 +119,8 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldULong3 = 99;
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
+		public const uint InternalArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldPosition_LOD0 = 102;
+		public const uint InternalArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldOrientation_LOD0 = 103;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -229,6 +231,8 @@ namespace Coherence.Generated
 			{ 99, "GenericFieldULong3" },
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
+			{ 102, "ArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldPosition_LOD0" },
+			{ 103, "ArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldOrientation_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -454,6 +458,10 @@ namespace Coherence.Generated
 					return GenericFieldColor0.Deserialize(inProtocolStream);
 				case InternalGenericFieldColor1:
 					return GenericFieldColor1.Deserialize(inProtocolStream);
+				case InternalArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldOrientation_LOD0:
+					return WorldOrientation.DeserializeArchetypePlayer_f14974ba2498d4ab0b5812581fe716bd_WorldOrientation_LOD0(inProtocolStream);
 				default:
 					return (null, 0, 0);
 			}
