@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace _Scripts.Managers
@@ -70,6 +71,12 @@ namespace _Scripts.Managers
       victoryScreen.SetActive(false);
       gameOverScreen.SetActive(false);
       hudScreen.SetActive(false);
+    }
+
+    public void RestartGame()
+    {
+      Scene scene = SceneManager.GetActiveScene();
+      SceneManager.LoadScene(scene.name);
     }
   }
 }
