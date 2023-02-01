@@ -10,7 +10,7 @@ namespace _Scripts.States.Enemy
       enemy.Animator.SetBool("Walk Forward", true);
 
       // If target is already found, trigger eat
-      if (enemy.damageableTarget != null)
+      if (enemy.DamageableTarget != null)
       {
         enemy.SwitchState(enemy.EatTreeState);
       }

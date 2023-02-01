@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Scripts.Managers;
 using _Scripts.States.Enemy;
 using UnityEngine;
 using UnityEngine.AI;
@@ -26,7 +27,8 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   [SerializeField] private int attackStrength = 2;
 
-  public IDamageable damageableTarget;
+  public GameManager GameManager;
+  public IDamageable DamageableTarget;
 
   // public int Health { get; private set; }
   public int Health;
@@ -43,7 +45,20 @@ public class EnemyController : MonoBehaviour, IDamageable
   {
     Animator = GetComponent<Animator>();
     _navMeshAgent = GetComponent<NavMeshAgent>();
+
+    GameManager.StartGameEvent += StartGame;
+    GameManager.VictoryEvent += GameOver;
+    GameManager.GameOverEvent += GameOver;
+  }
+
+  private void StartGame()
+  {
     SwitchState(StartState);
+  }
+
+  private void GameOver()
+  {
+    SwitchState(DeathState);
   }
 
   private void Update()
@@ -132,7 +147,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
     if (damageable != null)
     {
-      damageableTarget = damageable;
+      DamageableTarget = damageable;
       return true;
     }
 
@@ -144,7 +159,7 @@ public class EnemyController : MonoBehaviour, IDamageable
     IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
     if (damageable != null)
     {
-      damageableTarget = null;
+      DamageableTarget = null;
       return true;
     }
 
@@ -153,7 +168,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void EatTree()
   {
-    damageableTarget?.TakeDamage(attackStrength);
+    DamageableTarget?.TakeDamage(attackStrength);
   }
 
   public void PlayDeathEffects()

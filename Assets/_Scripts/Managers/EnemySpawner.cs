@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using _Scripts.Managers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
+  [SerializeField] private GameManager gameManager;
   [SerializeField] private int initialSpawnsPerTarget = 2;
   [SerializeField] private float spawnInterval = 5.0f;
 
@@ -16,7 +18,21 @@ public class EnemySpawner : MonoBehaviour
 
   private void OnEnable()
   {
-    StartSpawning();
+    gameManager.StartGameEvent += StartSpawning;
+    gameManager.VictoryEvent += StopSpawning;
+    gameManager.GameOverEvent += StopSpawning;
+  }
+  
+  private void OnDisable()
+  {
+    gameManager.StartGameEvent -= StartSpawning;
+    gameManager.VictoryEvent -= StopSpawning;
+    gameManager.GameOverEvent -= StopSpawning;
+  }
+
+  private void StopSpawning()
+  {
+    _isSpawning = false;
   }
 
   private void StartSpawning()
@@ -52,6 +68,7 @@ public class EnemySpawner : MonoBehaviour
     EnemyController selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
     Transform spawnLocation = spawnLocations[Random.Range(0, spawnLocations.Count)];
     EnemyController unit = Instantiate(selectedEnemy, spawnLocation);
+    unit.GameManager = gameManager;
     unit.SetNextDestination(target);
   }
 }
