@@ -11,11 +11,13 @@ public class EnemyController : MonoBehaviour, IDamageable
   private static int MAX_HEALTH = 100;
 
   public EnemyStartState StartState { get; } = new EnemyStartState();
+  public EnemySpawnState SpawnState { get; } = new EnemySpawnState();
   public EnemyFindTargetState FindTargetState { get; } = new EnemyFindTargetState();
   public EnemyEatTreeState EatTreeState { get; } = new EnemyEatTreeState();
   public EnemyDamageState DamageState { get; } = new EnemyDamageState();
   public EnemyDeathState DeathState { get; } = new EnemyDeathState();
 
+  [SerializeField] private GameObject spawnParticle;
   [SerializeField] private GameObject deathParticle;
 
   [SerializeField] private Transform destination;
@@ -120,6 +122,11 @@ public class EnemyController : MonoBehaviour, IDamageable
     _navMeshAgent.destination = destination.position;
   }
 
+  public void SetNextDestination(Transform nextDestination)
+  {
+    destination = nextDestination;
+  }
+
   public bool DetectTree(Collision collision)
   {
     IDamageable damageable = collision.gameObject.GetComponent<IDamageable>();
@@ -152,6 +159,12 @@ public class EnemyController : MonoBehaviour, IDamageable
   public void PlayDeathEffects()
   {
     Instantiate(deathParticle, transform);
+  }
+
+  public void PlaySpawnEffects(float playTime)
+  {
+    GameObject particle = Instantiate(spawnParticle, transform);
+    Destroy(particle, playTime);
   }
 
   public void FreezeAnimation()
