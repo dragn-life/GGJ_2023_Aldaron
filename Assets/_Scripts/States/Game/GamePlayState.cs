@@ -6,7 +6,6 @@ namespace _Scripts.States
   {
     public override void EnterState(GameManager game)
     {
-      game.SwitchState(game.PlayState);
     }
   }
 }

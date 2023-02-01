@@ -63,17 +63,17 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   private void Update()
   {
-    _currentState.OnUpdate(this);
+    _currentState?.OnUpdate(this);
   }
 
   private void LateUpdate()
   {
-    _currentState.OnLateUpdate(this);
+    _currentState?.OnLateUpdate(this);
   }
 
   private void OnCollisionEnter(Collision collision)
   {
-    _currentState.OnCollisionEnter(collision, this);
+    _currentState?.OnCollisionEnter(collision, this);
   }
 
   private void OnCollisionExit(Collision collision)

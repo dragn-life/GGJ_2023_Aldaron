@@ -70,5 +70,6 @@ public class EnemySpawner : MonoBehaviour
     EnemyController unit = Instantiate(selectedEnemy, spawnLocation);
     unit.GameManager = gameManager;
     unit.SetNextDestination(target);
+    unit.SwitchState(unit.StartState);
   }
 }
