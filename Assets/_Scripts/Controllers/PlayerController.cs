@@ -86,9 +86,30 @@ public class PlayerController : MonoBehaviour
 
   public void ShootArrow()
   {
-    GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPosition.position, arrowPrefab.transform.rotation);
+    // Ray Cast Direction to Shoot
+    Transform lookAt = null;
+    
+    // Experimental , doesn't work
+    // RaycastHit hit;
+    // Ray ray = _currentCamera.ScreenPointToRay(Input.mousePosition);
+    // if (Physics.Raycast(ray, out hit))
+    // {
+    //   lookAt = hit.transform;
+    // }
+
+    GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPosition.position, Quaternion.identity);
     Rigidbody arrowRigidbody = arrow.GetComponent<Rigidbody>();
-    arrowRigidbody.AddForce(arrowSpawnPosition.transform.forward * arrowForce, ForceMode.Impulse);
+
+    if (lookAt != null)
+    {
+      arrow.transform.rotation = Quaternion.LookRotation(lookAt.position);
+    }
+    else
+    {
+      arrow.transform.rotation = arrowSpawnPosition.rotation;
+    }
+
+    arrowRigidbody.AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
 
     SwitchState(IdleState);
   }
