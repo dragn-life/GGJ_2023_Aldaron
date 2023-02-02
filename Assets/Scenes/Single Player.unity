@@ -1582,7 +1582,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628331201}
-  m_LocalRotation: {x: 0.22139049, y: 0.000000008389705, z: -0.000000001904664, w: 0.9751853}
+  m_LocalRotation: {x: 0.22139049, y: -0.000000008389705, z: 0.000000001904664, w: 0.9751853}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4851,6 +4851,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5176967178514728267, guid: c485026f504974a78ab019ea7ec7efda, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5176967178514728267, guid: c485026f504974a78ab019ea7ec7efda, type: 3}
       propertyPath: m_WholeNumbers
       value: 1
       objectReference: {fileID: 0}
@@ -5514,8 +5518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d4c4444d32340a19da4eba1d744a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalSpeed: 100
-  VerticalSpeed: 1.3
+  playerSettings: {fileID: 11400000, guid: 29777b76caec742ca8e5bb7af5cd4645, type: 2}
   camera: {fileID: 865785486}
   gameManager: {fileID: 1800838990}
 --- !u!1 &1926571010

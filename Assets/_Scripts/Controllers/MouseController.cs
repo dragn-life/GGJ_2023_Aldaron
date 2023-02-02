@@ -1,15 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using _Scripts.Managers;
 using Cinemachine;
 using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-  public float HorizontalSpeed = 200;
-  public float VerticalSpeed = 2;
-
+  [SerializeField] private PlayerSettingsSO playerSettings;
   [SerializeField] private CinemachineFreeLook camera;
 
   [SerializeField] private GameManager gameManager;
@@ -65,8 +60,8 @@ public class MouseController : MonoBehaviour
     }
     else
     {
-      camera.m_XAxis.m_MaxSpeed = HorizontalSpeed;
-      camera.m_YAxis.m_MaxSpeed = VerticalSpeed;
+      camera.m_XAxis.m_MaxSpeed = playerSettings.HorizontalSens;
+      camera.m_YAxis.m_MaxSpeed = playerSettings.VerticalSens;
       Cursor.visible = false;
       Cursor.lockState = CursorLockMode.Locked;
     }
