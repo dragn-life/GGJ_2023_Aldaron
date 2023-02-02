@@ -12,6 +12,7 @@ namespace _Scripts.Managers
     [SerializeField] private AncientTreeManager treeManager;
     [SerializeField] private CountDownManager countDownManager;
 
+    [SerializeField] private GameObject startScreen;
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject hudScreen;
@@ -68,6 +69,7 @@ namespace _Scripts.Managers
 
     private void ResetScreen()
     {
+      startScreen.SetActive(false);
       victoryScreen.SetActive(false);
       gameOverScreen.SetActive(false);
       hudScreen.SetActive(false);

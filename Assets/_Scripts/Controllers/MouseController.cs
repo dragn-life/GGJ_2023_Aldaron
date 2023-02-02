@@ -19,6 +19,8 @@ public class MouseController : MonoBehaviour
 
   private void OnEnable()
   {
+    // Lock Camera Up by Default
+    GameStopped();
     gameManager.StartGameEvent += GameStarted;
     gameManager.GameOverEvent += GameStopped;
     gameManager.VictoryEvent += GameStopped;

@@ -1,16 +1,19 @@
 using System;
+using _Scripts.Managers;
 using _Scripts.States.Player;
-using Cinemachine;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+  public PlayerPauseState PauseState { get; } = new PlayerPauseState();
   public PlayerStartState StartState { get; } = new PlayerStartState();
   public PlayerIdleState IdleState { get; } = new PlayerIdleState();
   public PlayerMoveState MoveState { get; } = new PlayerMoveState();
   public PlayerShootState ShootState { get; } = new PlayerShootState();
 
   public Animator Animator { get; private set; }
+
+  [SerializeField] private GameManager gameManager;
 
   [SerializeField] private GameObject arrowPrefab;
   [SerializeField] private Transform arrowSpawnPosition;
@@ -25,12 +28,26 @@ public class PlayerController : MonoBehaviour
   private BasePlayerState _currentState;
   private Camera _currentCamera;
 
+  private void OnEnable()
+  {
+    gameManager.StartGameEvent += UnPausePlayer;
+    gameManager.VictoryEvent += PausePlayer;
+    gameManager.GameOverEvent += PausePlayer;
+  }
+
+  private void OnDisable()
+  {
+    gameManager.StartGameEvent -= UnPausePlayer;
+    gameManager.VictoryEvent -= PausePlayer;
+    gameManager.GameOverEvent -= PausePlayer;
+  }
+
   // Start is called before the first frame update
   void Start()
   {
     Animator = GetComponent<Animator>();
     _currentCamera = Camera.main;
-    SwitchState(StartState);
+    SwitchState(PauseState);
   }
 
   // Update is called once per frame
@@ -42,6 +59,16 @@ public class PlayerController : MonoBehaviour
   private void LateUpdate()
   {
     _currentState.OnLateUpdate(this);
+  }
+
+  private void UnPausePlayer()
+  {
+    SwitchState(IdleState);
+  }
+
+  private void PausePlayer()
+  {
+    SwitchState(PauseState);
   }
 
   public void AimWithCamera()
@@ -88,7 +115,7 @@ public class PlayerController : MonoBehaviour
   {
     // Ray Cast Direction to Shoot
     Transform lookAt = null;
-    
+
     // Experimental , doesn't work
     // RaycastHit hit;
     // Ray ray = _currentCamera.ScreenPointToRay(Input.mousePosition);

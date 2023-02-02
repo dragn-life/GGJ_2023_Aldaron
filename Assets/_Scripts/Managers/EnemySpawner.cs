@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
   [SerializeField] private List<Transform> targetDestinations;
   [SerializeField] private List<Transform> spawnLocations;
 
-  private bool _isSpawning;
+  private bool _isSpawning = false;
   private int _nextTarget = 0;
 
   private void OnEnable()

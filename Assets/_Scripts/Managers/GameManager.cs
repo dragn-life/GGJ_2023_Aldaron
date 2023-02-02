@@ -1,19 +1,19 @@
 using System;
 using System.Collections;
 using _Scripts.States;
-using Coherence.Runtime;
 using UnityEngine;
 
 namespace _Scripts.Managers
 {
   public class GameManager : MonoBehaviour
   {
+    public GameReadyState ReadyState { get; } = new GameReadyState();
     public GameStartState StartState { get; } = new GameStartState();
     public GamePlayState PlayState { get; } = new GamePlayState();
     public GameVictoryState GameVictoryState { get; } = new GameVictoryState();
     public GameOverState GameOverState { get; } = new GameOverState();
 
-    [SerializeField] private float startGameDelay = 3.0f;
+    [SerializeField] private float startGameDelay = 1.0f;
     public event Action StartGameEvent;
     public event Action VictoryEvent;
     public event Action GameOverEvent;
@@ -22,7 +22,7 @@ namespace _Scripts.Managers
 
     private void OnEnable()
     {
-      SwitchState(StartState, startGameDelay);
+      SwitchState(ReadyState);
     }
 
     public void SwitchState(BaseGameState newState)
@@ -34,6 +34,11 @@ namespace _Scripts.Managers
     public void SwitchState(BaseGameState newState, float delay)
     {
       StartCoroutine(SwitchStateCoroutine(newState, delay));
+    }
+
+    public void StartGame()
+    {
+      SwitchState(StartState, startGameDelay);
     }
 
     private IEnumerator SwitchStateCoroutine(BaseGameState newState, float delay)

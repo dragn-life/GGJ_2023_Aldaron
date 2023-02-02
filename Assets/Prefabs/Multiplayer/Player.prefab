@@ -588,7 +588,7 @@ MonoBehaviour:
     archetypeName: Player_f14974ba2498d4ab0b5812581fe716bd
     GeneratesArchetypeDefinition: 1
   InterpolationLocation: 1
-  bakedScriptType: Coherence.Generated.CoherenceSyncPlayer_id0, Assembly-CSharp
+  bakedScriptType: Coherence.Generated.CoherenceSyncPlayer, Assembly-CSharp
   approveAuthorityTransferRequests: 1
   simulationType: 0
   authorityTransferType: 2
