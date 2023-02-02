@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.03608577, g: 0.008169664, b: 0.012857902, a: 1}
+  m_IndirectSpecularColor: {r: 0.036077663, g: 0.008166069, b: 0.012860401, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -377,7 +377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &184818226
 Transform:
   m_ObjectHideFlags: 0
@@ -1862,7 +1862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &716809146
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1897,7 +1897,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2bb56bc7421bc1c4d9dfd19984bff7c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5514,8 +5514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d4c4444d32340a19da4eba1d744a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalSpeed: 200
-  VerticalSpeed: 2
+  HorizontalSpeed: 100
+  VerticalSpeed: 1.3
   camera: {fileID: 865785486}
   gameManager: {fileID: 1800838990}
 --- !u!1 &1926571010
