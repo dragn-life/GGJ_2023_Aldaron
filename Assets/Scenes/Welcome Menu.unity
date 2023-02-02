@@ -510,6 +510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Multiplayer Button
       objectReference: {fileID: 0}
+    - target: {fileID: 7321821474376686686, guid: a16346a96b8f44d2cb5be23eb9de1548, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7321821474376686687, guid: a16346a96b8f44d2cb5be23eb9de1548, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
