@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f4bc770bac524a70af4953ab76f9e4d, type: 3}
-  m_Name: Hard
+  m_Name: Level 1
   m_EditorClassIdentifier: 
-  TimeLimit: 5
-  InitialEnemySpawnsPerTarget: 3
+  TimeLimit: 10
+  InitialEnemySpawnsPerTarget: 1
   EnemySpawnInterval: 5
-  EnemyHealth: 200
-  EnemyAttackStrength: 10
+  EnemyHealth: 100
+  EnemyAttackStrength: 2
   EnemyAttackInterval: 3
