@@ -15,3 +15,4 @@ MonoBehaviour:
   hasGuidIssue: 0
   prefabMappings:
   - prefab: {fileID: 2894649025108321556, guid: f14974ba2498d4ab0b5812581fe716bd, type: 3}
+  - prefab: {fileID: 5967343118330837046, guid: 54f3eab4a722a455c9fefce27067270c, type: 3}
