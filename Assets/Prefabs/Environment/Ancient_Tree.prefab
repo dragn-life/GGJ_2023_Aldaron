@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: -4007347913093526757}
   - component: {fileID: 7315666187829086171}
   m_Layer: 0
-  m_Name: LargeTree
+  m_Name: Ancient_Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
