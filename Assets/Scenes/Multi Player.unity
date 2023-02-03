@@ -2583,7 +2583,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234584870}
-  m_LocalRotation: {x: 0.22139049, y: 0.000000008389705, z: -0.000000001904664, w: 0.9751853}
+  m_LocalRotation: {x: 0.22139049, y: -0.000000008389705, z: 0.000000001904664, w: 0.9751853}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3333,7 +3333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 776307284}
-  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
+  difficultyManager: {fileID: 11400000, guid: 79496bdc74f73402e9c15311d3e75e6e, type: 2}
 --- !u!1001 &348500189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6994,7 +6994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f01dc47646a4b58b0af98bb5841e271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
+  difficultyManager: {fileID: 11400000, guid: 79496bdc74f73402e9c15311d3e75e6e, type: 2}
   startGameDelay: 1
 --- !u!1 &793649721
 GameObject:
@@ -10334,7 +10334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 776307284}
-  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
+  difficultyManager: {fileID: 11400000, guid: 79496bdc74f73402e9c15311d3e75e6e, type: 2}
   enemyPrefabs:
   - {fileID: 666084786838115661, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
   targetDestinations:
@@ -15086,7 +15086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 776307284}
-  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
+  difficultyManager: {fileID: 11400000, guid: 79496bdc74f73402e9c15311d3e75e6e, type: 2}
   treeManager: {fileID: 1921872271}
   countDownManager: {fileID: 347376514}
   startScreen: {fileID: 765572513}
