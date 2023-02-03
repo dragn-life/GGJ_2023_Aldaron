@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Scripts.States;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace _Scripts.Managers
     public GameVictoryState GameVictoryState { get; } = new GameVictoryState();
     public GameOverState GameOverState { get; } = new GameOverState();
 
+    [SerializeField] private DifficultyManagerSO difficultyManager;
     [SerializeField] private float startGameDelay = 1.0f;
     public event Action StartGameEvent;
     public event Action VictoryEvent;
@@ -38,6 +40,10 @@ namespace _Scripts.Managers
 
     public void StartGame()
     {
+      Analytics.TrackEvent("startGame", new Dictionary<string, object>()
+      {
+        { "level", difficultyManager.CurrentDifficultyLevel().ToString() }
+      });
       SwitchState(StartState, startGameDelay);
     }
 
@@ -51,6 +57,10 @@ namespace _Scripts.Managers
     {
       if (_currentState == PlayState)
       {
+        Analytics.TrackEvent("wonGame", new Dictionary<string, object>()
+        {
+          { "level", difficultyManager.CurrentDifficultyLevel().ToString() }
+        });
         SwitchState(GameVictoryState);
       }
     }
@@ -59,6 +69,10 @@ namespace _Scripts.Managers
     {
       if (_currentState == PlayState)
       {
+        Analytics.TrackEvent("lostGame", new Dictionary<string, object>()
+        {
+          { "level", difficultyManager.CurrentDifficultyLevel().ToString() }
+        });
         SwitchState(GameOverState);
       }
     }

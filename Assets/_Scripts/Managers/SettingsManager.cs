@@ -30,7 +30,7 @@ public class SettingsManager : MonoBehaviour
 
   public void UpdateHorizontalSens(float newSens)
   {
-    Debug.Log("New Sens: " + newSens);
+    // Debug.Log("New Sens: " + newSens);
     playerSettings.HorizontalSens = newSens;
   }
 
