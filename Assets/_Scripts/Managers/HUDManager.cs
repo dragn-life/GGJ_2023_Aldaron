@@ -14,6 +14,7 @@ namespace _Scripts.Managers
     [SerializeField] private CountDownManager countDownManager;
 
     [SerializeField] private GameObject startScreen;
+    [SerializeField] private TextMeshProUGUI startLevelText;
 
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject victoryNextLevelButton;
@@ -25,6 +26,14 @@ namespace _Scripts.Managers
     [SerializeField] private GameObject hudScreen;
     [SerializeField] private Slider treeHealth;
     [SerializeField] private TextMeshProUGUI countdown;
+
+    private void Start()
+    {
+      if (startLevelText)
+      {
+        startLevelText.text = difficultyManager.CurrentDifficultyLevel().ToString();
+      }
+    }
 
     private void OnEnable()
     {
