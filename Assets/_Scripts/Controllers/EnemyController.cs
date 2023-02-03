@@ -5,8 +5,9 @@ using _Scripts.States.Enemy;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour, IDamageable
+public class EnemyController : MonoBehaviour, IPooledObject, IDamageable
 {
+  public EnemyNothingState NothingState { get; } = new EnemyNothingState();
   public EnemyStartState StartState { get; } = new EnemyStartState();
   public EnemySpawnState SpawnState { get; } = new EnemySpawnState();
   public EnemyFindTargetState FindTargetState { get; } = new EnemyFindTargetState();
@@ -134,7 +135,12 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void DestroySelf(float delay)
   {
-    Destroy(gameObject, delay);
+    Invoke(nameof(DestroySelf), delay);
+  }
+
+  public void DestroySelf()
+  {
+    gameObject.SetActive(false);
   }
 
   public void GotoDestination()
@@ -221,5 +227,10 @@ public class EnemyController : MonoBehaviour, IDamageable
   private void EnableCanTakeDamage()
   {
     _canTakeDamage = true;
+  }
+
+  public void OnObjectSpawn()
+  {
+    SwitchState(NothingState);
   }
 }

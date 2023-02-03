@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
   [SerializeField] private List<Transform> targetDestinations;
   [SerializeField] private List<Transform> spawnLocations;
 
+  [SerializeField] private ObjectPooler objectPooler;
+  
   private bool _isSpawning = false;
   private int _nextTarget = 0;
 
@@ -68,10 +70,11 @@ public class EnemySpawner : MonoBehaviour
     {
       return;
     }
-    EnemyController selectedEnemy = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+    
     Transform spawnLocation = spawnLocations[Random.Range(0, spawnLocations.Count)];
-    EnemyController unit = Instantiate(selectedEnemy, spawnLocation);
+    EnemyController unit = objectPooler.SpawnFromPool("Enemy", spawnLocation.position, Quaternion.identity).GetComponent<EnemyController>();
     unit.GameManager = gameManager;
+    
     unit.SubscribeToGameEvents();
     unit.SetNextDestination(target);
     unit.SwitchState(unit.StartState);
