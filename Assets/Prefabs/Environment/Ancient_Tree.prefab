@@ -110,7 +110,8 @@ GameObject:
   - component: {fileID: 4243452912447970882}
   - component: {fileID: 4243452912433367778}
   - component: {fileID: -4007347913093526757}
-  - component: {fileID: 7315666187829086171}
+  - component: {fileID: 5487333852079590138}
+  - component: {fileID: 8396219246159377726}
   m_Layer: 0
   m_Name: Ancient_Tree
   m_TagString: Untagged
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeManager: {fileID: 0}
---- !u!136 &7315666187829086171
+--- !u!136 &5487333852079590138
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,10 +193,26 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 5.4989147
-  m_Height: 10.997829
+  m_Radius: 3.259393
+  m_Height: 6.5187864
   m_Direction: 1
-  m_Center: {x: -0.23045254, y: 3.7474327, z: 0.16652393}
+  m_Center: {x: -4.573178, y: 2.6407275, z: 0.08968882}
+--- !u!54 &8396219246159377726
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243452912447603298}
+  serializedVersion: 2
+  m_Mass: 10000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4243452912447603300
 GameObject:
   m_ObjectHideFlags: 0
