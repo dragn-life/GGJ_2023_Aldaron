@@ -8,6 +8,7 @@ public class WelcomeManager : MonoBehaviour
   [SerializeField] private string soloSceneName = "Single Player";
   [SerializeField] private string multiplayerSceneName = "Multi Player";
 
+  [SerializeField] private DifficultyManagerSO difficultyManager;
   [SerializeField] private GameObject settingsMenu;
 
 
@@ -26,12 +27,14 @@ public class WelcomeManager : MonoBehaviour
 
   public void LoadSolo()
   {
+    difficultyManager.ResetDifficulty();
     Analytics.TrackEvent("loadSinglePlayerScene");
     SceneManager.LoadScene(soloSceneName);
   }
 
   public void LoadMultiplayer()
   {
+    difficultyManager.ResetDifficulty();
     Analytics.TrackEvent("loadMultiplayerScene");
     SceneManager.LoadScene(multiplayerSceneName);
   }

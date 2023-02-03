@@ -1,14 +1,12 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "DifficultyManager", menuName = "ScriptableObjects/DifficultyManager")]
 public class DifficultyManagerSO : ScriptableObject
 {
   [SerializeField] private List<DifficultyLevelSO> difficulties;
 
-  private int _currentDifficultyIndex;
+  [SerializeField] private int currentDifficultyIndex;
 
   private void Awake()
   {
@@ -17,32 +15,32 @@ public class DifficultyManagerSO : ScriptableObject
 
   public DifficultyLevelSO CurrentDifficulty()
   {
-    return difficulties[_currentDifficultyIndex];
+    return difficulties[currentDifficultyIndex];
   }
 
   public void ResetDifficulty()
   {
-    _currentDifficultyIndex = 0;
+    currentDifficultyIndex = 0;
   }
 
   public bool IsOnLastDifficulty()
   {
-    return _currentDifficultyIndex == difficulties.Count - 1;
+    return currentDifficultyIndex == difficulties.Count - 1;
   }
 
   public int CurrentDifficultyLevel()
   {
-    return _currentDifficultyIndex + 1;
+    return currentDifficultyIndex + 1;
   }
 
   public DifficultyLevelSO GotoNextDifficulty()
   {
-    _currentDifficultyIndex++;
-    if (_currentDifficultyIndex >= difficulties.Count)
+    currentDifficultyIndex++;
+    if (currentDifficultyIndex >= difficulties.Count)
     {
-      _currentDifficultyIndex = 0;
+      currentDifficultyIndex = 0;
     }
 
-    return difficulties[_currentDifficultyIndex];
+    return difficulties[currentDifficultyIndex];
   }
 }
