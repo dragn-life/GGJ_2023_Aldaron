@@ -16,7 +16,7 @@ namespace _Scripts.States.Enemy
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.Animator.SetTrigger("Punch");
       enemy.EatTree();
-      enemy.SwitchState(enemy.FindTargetState, enemy.attackInterval);
+      enemy.SwitchState(enemy.FindTargetState, enemy.difficultyManager.CurrentDifficulty().EnemyAttackInterval);
     }
 
     public override void OnUpdate(EnemyController enemy)

@@ -774,13 +774,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933162e26f991486f9f30ede8c38fe75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
   spawnParticle: {fileID: 7922615937188239994, guid: b3746752069604571a66afe33e2d4f5a, type: 3}
   deathParticle: {fileID: 4066582667809357706, guid: 0b55ae5d5e73f4605bc676300cc8cfe3, type: 3}
   destination: {fileID: 0}
   attackStrength: 10
+  ShouldBeDead: 0
   GameManager: {fileID: 0}
   attackInterval: 3
-  Health: 0
 --- !u!54 &804594660
 Rigidbody:
   m_ObjectHideFlags: 0

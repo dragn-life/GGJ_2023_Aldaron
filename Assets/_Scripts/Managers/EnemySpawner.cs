@@ -6,8 +6,7 @@ using Random = UnityEngine.Random;
 public class EnemySpawner : MonoBehaviour
 {
   [SerializeField] private GameManager gameManager;
-  [SerializeField] private int initialSpawnsPerTarget = 2;
-  [SerializeField] private float spawnInterval = 5.0f;
+  [SerializeField] private DifficultyManagerSO difficultyManager;
 
   [SerializeField] private List<EnemyController> enemyPrefabs;
   [SerializeField] private List<Transform> targetDestinations;
@@ -40,13 +39,13 @@ public class EnemySpawner : MonoBehaviour
     _isSpawning = true;
     foreach (Transform target in targetDestinations)
     {
-      for (int i = 0; i < initialSpawnsPerTarget; i++)
+      for (int i = 0; i < difficultyManager.CurrentDifficulty().InitialEnemySpawnsPerTarget; i++)
       {
         SpawnEnemy(target);
       }
     }
 
-    Invoke(nameof(SpawnNextEnemy), spawnInterval);
+    Invoke(nameof(SpawnNextEnemy), difficultyManager.CurrentDifficulty().EnemySpawnInterval);
   }
 
   private void SpawnNextEnemy()
@@ -59,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
 
     if (_isSpawning)
     {
-      Invoke(nameof(SpawnNextEnemy), spawnInterval);
+      Invoke(nameof(SpawnNextEnemy), difficultyManager.CurrentDifficulty().EnemySpawnInterval);
     }
   }
 

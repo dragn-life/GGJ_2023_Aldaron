@@ -1,16 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using _Scripts.Managers;
 using _Scripts.States.Enemy;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 public class EnemyController : MonoBehaviour, IDamageable
 {
-  private static int MAX_HEALTH = 100;
-
   public EnemyStartState StartState { get; } = new EnemyStartState();
   public EnemySpawnState SpawnState { get; } = new EnemySpawnState();
   public EnemyFindTargetState FindTargetState { get; } = new EnemyFindTargetState();
@@ -18,24 +14,23 @@ public class EnemyController : MonoBehaviour, IDamageable
   public EnemyDamageState DamageState { get; } = new EnemyDamageState();
   public EnemyDeathState DeathState { get; } = new EnemyDeathState();
 
+  public DifficultyManagerSO difficultyManager;
+
   [SerializeField] private GameObject spawnParticle;
   [SerializeField] private GameObject deathParticle;
 
   [SerializeField] private Transform destination;
 
 
-  [SerializeField] private int attackStrength = 2;
-
   public bool ShouldBeDead;
   public GameManager GameManager;
   public IDamageable DamageableTarget;
-  public float attackInterval = 5.0f;
 
-  // public int Health { get; private set; }
-  public int Health;
   public Animator Animator { get; private set; }
 
   public NavMeshAgent navMeshAgent { get; private set; }
+
+  private int _currentHealth;
 
   private BaseEnemyState _currentState;
   private BaseEnemyState _lastState;
@@ -134,7 +129,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void ResetEnemy()
   {
-    Health = MAX_HEALTH;
+    _currentHealth = difficultyManager.CurrentDifficulty().EnemyHealth;
   }
 
   public void DestroySelf(float delay)
@@ -178,7 +173,7 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void EatTree()
   {
-    DamageableTarget?.TakeDamage(attackStrength);
+    DamageableTarget?.TakeDamage(difficultyManager.CurrentDifficulty().EnemyAttackStrength);
   }
 
   public void PlayDeathEffects()
@@ -209,9 +204,9 @@ public class EnemyController : MonoBehaviour, IDamageable
     if (_canTakeDamage)
     {
       _canTakeDamage = false;
-      Health -= amount;
+      _currentHealth -= amount;
       // Debug.Log("Enemy Health" + Health);
-      if (Health > 0)
+      if (_currentHealth > 0)
       {
         SwitchState(DamageState);
         Invoke(nameof(EnableCanTakeDamage), debounceTime);

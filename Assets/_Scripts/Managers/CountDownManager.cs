@@ -5,7 +5,7 @@ using UnityEngine;
 public class CountDownManager : MonoBehaviour
 {
   [SerializeField] private GameManager gameManager;
-  [SerializeField] private float totalTime = 30.0f;
+  [SerializeField] private DifficultyManagerSO difficultyManager;
 
   public event Action<float> TimeChangeEvent;
 
@@ -55,6 +55,6 @@ public class CountDownManager : MonoBehaviour
   private void StartCountDown()
   {
     _isCountingDown = true;
-    _timeLeft = totalTime;
+    _timeLeft = difficultyManager.CurrentDifficulty().TimeLimit;
   }
 }

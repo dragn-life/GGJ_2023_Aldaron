@@ -1218,8 +1218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1800838990}
-  initialSpawnsPerTarget: 1
-  spawnInterval: 5
+  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
   enemyPrefabs:
   - {fileID: 666084786838115661, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
   targetDestinations:
@@ -5306,7 +5305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1800838990}
-  totalTime: 30
+  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
 --- !u!1001 &1181043887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7331,7 +7330,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595484526}
-  m_LocalRotation: {x: 0.22139049, y: -0.000000008389705, z: 0.000000001904664, w: 0.9751853}
+  m_LocalRotation: {x: 0.22139049, y: 0.000000008389705, z: -0.000000001904664, w: 0.9751853}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
