@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,10 +19,14 @@ namespace _Scripts.Managers
     [SerializeField] private GameObject victoryScreen;
     [SerializeField] private GameObject victoryNextLevelButton;
     [SerializeField] private GameObject victoryRestartButton;
-    [SerializeField] private TextMeshProUGUI victoryLevelText;
-
+    [SerializeField] private Slider victoryLevelSlider;
+    [SerializeField] private List<GameObject> victoryLevelNotches;
+    [SerializeField] private Sprite activeVictoryNotchSprite;
+    [SerializeField] private Sprite inactiveVictoryNotchSprite;
 
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private TextMeshProUGUI gameOverLevelText;
+
     [SerializeField] private GameObject hudScreen;
     [SerializeField] private Slider treeHealth;
     [SerializeField] private TextMeshProUGUI countdown;
@@ -75,9 +79,34 @@ namespace _Scripts.Managers
     {
       ResetScreen();
       victoryScreen.SetActive(true);
-      if (victoryLevelText)
+      if (victoryLevelSlider)
       {
-        victoryLevelText.text = difficultyManager.CurrentDifficultyLevel().ToString();
+        victoryLevelSlider.value = difficultyManager.CurrentDifficultyLevel() - 1;
+
+        for (int i = 0; i < victoryLevelNotches.Count; i++)
+        {
+          Image image = victoryLevelNotches[i].GetComponent<Image>();
+          // TODO: Fix why text is always null?
+          TextMeshProUGUI text = victoryLevelNotches[i].GetComponentInChildren<TextMeshProUGUI>();
+          if (i < difficultyManager.CurrentDifficultyLevel())
+          {
+            if (text)
+            {
+              text.color = new Color(214, 11, 11);
+            }
+
+            image.sprite = activeVictoryNotchSprite;
+          }
+          else
+          {
+            if (text)
+            {
+              text.color = new Color(255, 255, 255);
+            }
+
+            image.sprite = inactiveVictoryNotchSprite;
+          }
+        }
       }
 
       if (difficultyManager.IsOnLastDifficulty())
