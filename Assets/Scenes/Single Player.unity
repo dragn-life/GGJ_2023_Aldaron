@@ -246,7 +246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 459304894}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &38907098
 MonoBehaviour:
@@ -1625,7 +1625,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452216906}
-  m_LocalRotation: {x: 0.25666797, y: 0.00000001662996, z: -0.0000000044163255, w: 0.9664997}
+  m_LocalRotation: {x: 0.25666797, y: -0.000000016629963, z: 0.0000000044163264, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1853,8 +1853,8 @@ Transform:
   - {fileID: 291937469}
   - {fileID: 1800838989}
   - {fileID: 2126665033}
-  - {fileID: 38907097}
   - {fileID: 1168493827}
+  - {fileID: 38907097}
   - {fileID: 1893280748}
   - {fileID: 1228894032}
   m_Father: {fileID: 0}
@@ -5291,7 +5291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 459304894}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1168493828
 MonoBehaviour:
@@ -6247,7 +6247,7 @@ PrefabInstance:
     - target: {fileID: -4007347913093526757, guid: 0ac9f1de84d3644aeb43b8e75b318d90, type: 3}
       propertyPath: treeManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 38907098}
     - target: {fileID: 4243452912447603298, guid: 0ac9f1de84d3644aeb43b8e75b318d90, type: 3}
       propertyPath: m_Name
       value: LargeTree 3
@@ -7003,7 +7003,7 @@ PrefabInstance:
     - target: {fileID: -4007347913093526757, guid: 0ac9f1de84d3644aeb43b8e75b318d90, type: 3}
       propertyPath: treeManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 38907098}
     - target: {fileID: 4243452912447603298, guid: 0ac9f1de84d3644aeb43b8e75b318d90, type: 3}
       propertyPath: m_Name
       value: LargeTree 2
@@ -8331,7 +8331,7 @@ PrefabInstance:
     - target: {fileID: -4007347913093526757, guid: 0ac9f1de84d3644aeb43b8e75b318d90, type: 3}
       propertyPath: treeManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 38907098}
     - target: {fileID: 4243452912447603298, guid: 0ac9f1de84d3644aeb43b8e75b318d90, type: 3}
       propertyPath: m_Name
       value: LargeTree 1
