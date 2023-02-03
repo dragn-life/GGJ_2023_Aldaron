@@ -183,13 +183,13 @@ public class EnemyController : MonoBehaviour, IDamageable
 
   public void PlayDeathEffects()
   {
-    Instantiate(deathParticle, transform);
+    // Instantiate(deathParticle, transform);
   }
 
   public void PlaySpawnEffects(float playTime)
   {
-    GameObject particle = Instantiate(spawnParticle, transform);
-    Destroy(particle, playTime);
+    // GameObject particle = Instantiate(spawnParticle, transform);
+    // Destroy(particle, playTime);
   }
 
   public void FreezeAnimation()
