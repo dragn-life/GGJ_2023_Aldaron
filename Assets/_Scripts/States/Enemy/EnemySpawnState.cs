@@ -6,7 +6,7 @@ namespace _Scripts.States.Enemy
   {
     public override void EnterState(EnemyController enemy)
     {
-      float duration = 3f;
+      float duration = 1f;
       enemy.Animator.SetBool("Walk Forward", false);
       enemy.PlaySpawnEffects(duration);
       enemy.SwitchState(enemy.FindTargetState, duration);
