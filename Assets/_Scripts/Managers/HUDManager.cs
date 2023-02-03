@@ -9,11 +9,18 @@ namespace _Scripts.Managers
   public class HUDManager : MonoBehaviour
   {
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private DifficultyManagerSO difficultyManager;
     [SerializeField] private AncientTreeManager treeManager;
     [SerializeField] private CountDownManager countDownManager;
 
     [SerializeField] private GameObject startScreen;
+
     [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private GameObject victoryNextLevelButton;
+    [SerializeField] private GameObject victoryRestartButton;
+    [SerializeField] private TextMeshProUGUI victoryLevelText;
+
+
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject hudScreen;
     [SerializeField] private Slider treeHealth;
@@ -59,6 +66,19 @@ namespace _Scripts.Managers
     {
       ResetScreen();
       victoryScreen.SetActive(true);
+      if (victoryLevelText)
+      {
+        victoryLevelText.text = difficultyManager.CurrentDifficultyLevel().ToString();
+      }
+
+      if (difficultyManager.IsOnLastDifficulty())
+      {
+        victoryRestartButton?.SetActive(true);
+      }
+      else
+      {
+        victoryNextLevelButton?.SetActive(true);
+      }
     }
 
     private void SetupPlayHud()
@@ -71,12 +91,22 @@ namespace _Scripts.Managers
     {
       startScreen.SetActive(false);
       victoryScreen.SetActive(false);
+      victoryNextLevelButton?.SetActive(false);
+      victoryRestartButton?.SetActive(false);
       gameOverScreen.SetActive(false);
       hudScreen.SetActive(false);
     }
 
+    public void GotoNextLevel()
+    {
+      difficultyManager.GotoNextDifficulty();
+      Scene scene = SceneManager.GetActiveScene();
+      SceneManager.LoadScene(scene.name);
+    }
+
     public void RestartGame()
     {
+      difficultyManager.ResetDifficulty();
       Scene scene = SceneManager.GetActiveScene();
       SceneManager.LoadScene(scene.name);
     }

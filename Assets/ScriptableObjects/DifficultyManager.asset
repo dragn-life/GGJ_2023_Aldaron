@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficulties:
   - {fileID: 11400000, guid: 5a339a3d21cb1468eb7edb117cba5cf0, type: 2}
+  - {fileID: 11400000, guid: 06cdf9f2284bf4b2e8504586ee145895, type: 2}

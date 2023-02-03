@@ -20,7 +20,7 @@ public class DifficultyManagerSO : ScriptableObject
     return difficulties[_currentDifficultyIndex];
   }
 
-  private void ResetDifficulty()
+  public void ResetDifficulty()
   {
     _currentDifficultyIndex = 0;
   }
@@ -28,6 +28,11 @@ public class DifficultyManagerSO : ScriptableObject
   public bool IsOnLastDifficulty()
   {
     return _currentDifficultyIndex == difficulties.Count - 1;
+  }
+
+  public int CurrentDifficultyLevel()
+  {
+    return _currentDifficultyIndex + 1;
   }
 
   public DifficultyLevelSO GotoNextDifficulty()
