@@ -103,7 +103,7 @@ MonoBehaviour:
     archetypeName: CountDownManager_54f3eab4a722a455c9fefce27067270c
     GeneratesArchetypeDefinition: 0
   InterpolationLocation: 1
-  bakedScriptType: Coherence.Generated.CoherenceSyncCountDownManager_id1, Assembly-CSharp
+  bakedScriptType: Coherence.Generated.CoherenceSyncCountDownManager, Assembly-CSharp
   approveAuthorityTransferRequests: 1
   simulationType: 0
   authorityTransferType: 2
