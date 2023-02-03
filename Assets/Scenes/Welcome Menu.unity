@@ -222,7 +222,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soloSceneName: Single Player
   multiplayerSceneName: Multi Player
-  difficultyManager: {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
+  difficultyManagers:
+  - {fileID: 11400000, guid: cec98f509cc794545a2df552fb46272b, type: 2}
+  - {fileID: 11400000, guid: 79496bdc74f73402e9c15311d3e75e6e, type: 2}
   settingsMenu: {fileID: 2074113924}
 --- !u!4 &246743236
 Transform:
