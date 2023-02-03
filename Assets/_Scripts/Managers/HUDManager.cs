@@ -72,6 +72,11 @@ namespace _Scripts.Managers
     private void SetupGameOverHud()
     {
       ResetScreen();
+      if (gameOverLevelText)
+      {
+        gameOverLevelText.text = (difficultyManager.CurrentDifficultyLevel() - 1).ToString();
+      }
+
       gameOverScreen.SetActive(true);
     }
 
