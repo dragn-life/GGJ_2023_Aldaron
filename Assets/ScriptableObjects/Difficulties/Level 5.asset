@@ -16,5 +16,5 @@ MonoBehaviour:
   InitialEnemySpawnsPerTarget: 1
   EnemySpawnInterval: 20
   EnemyHealth: 500
-  EnemyAttackStrength: 3
+  EnemyAttackStrength: 10
   EnemyAttackInterval: 3

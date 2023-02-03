@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4bc770bac524a70af4953ab76f9e4d, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  TimeLimit: 20
-  InitialEnemySpawnsPerTarget: 2
-  EnemySpawnInterval: 5
+  TimeLimit: 30
+  InitialEnemySpawnsPerTarget: 1
+  EnemySpawnInterval: 8
   EnemyHealth: 100
-  EnemyAttackStrength: 2
+  EnemyAttackStrength: 8
   EnemyAttackInterval: 3

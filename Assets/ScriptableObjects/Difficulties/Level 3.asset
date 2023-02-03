@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level 3
   m_EditorClassIdentifier: 
   TimeLimit: 30
-  InitialEnemySpawnsPerTarget: 3
-  EnemySpawnInterval: 3
-  EnemyHealth: 100
-  EnemyAttackStrength: 10
+  InitialEnemySpawnsPerTarget: 1
+  EnemySpawnInterval: 8
+  EnemyHealth: 200
+  EnemyAttackStrength: 8
   EnemyAttackInterval: 3
