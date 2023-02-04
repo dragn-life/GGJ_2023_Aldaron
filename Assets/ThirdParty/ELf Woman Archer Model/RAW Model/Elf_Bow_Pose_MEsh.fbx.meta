@@ -1,0 +1,214 @@
+fileFormatVersion: 2
+guid: ca699fd3cab2d5b409c11c599b7dac59
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arrow1
+    100002: Arrow10
+    100004: Arrow2
+    100006: Arrow3
+    100008: Arrow4
+    100010: Arrow5
+    100012: Arrow6
+    100014: Arrow7
+    100016: Arrow8
+    100018: Arrow9
+    100020: Arrows
+    100022: Bow_Bag_Arrows
+    100024: Bow_Set:Bow_Bag_OBJ
+    100026: //RootNode
+    100028: Elf_Bow_Rig
+    100030: Elf_Bow_Rig_CTRL
+    100032: Elf_Bow_Rig_Finish:Bow
+    100034: Elf_Bow_Rig_Finish:Bow 1
+    100036: Elf_Bow_Rig_Finish:Bow_Bottom_IK
+    100038: Elf_Bow_Rig_Finish:BOw_TOp_IK
+    100040: Elf_Bow_Rig_Finish:Elf_Bow_Skeletons
+    100042: Elf_Bow_Rig_Finish:joint1
+    100044: Elf_Bow_Rig_Finish:joint2
+    100046: Elf_Bow_Rig_Finish:L_Bow1
+    100048: Elf_Bow_Rig_Finish:L_Bow2
+    100050: Elf_Bow_Rig_Finish:L_Bow3
+    100052: Elf_Bow_Rig_Finish:L_Bow4
+    100054: Elf_Bow_Rig_Finish:L_Bow5
+    100056: Elf_Bow_Rig_Finish:R_Bow1
+    100058: Elf_Bow_Rig_Finish:R_Bow2
+    100060: Elf_Bow_Rig_Finish:R_Bow3
+    100062: Elf_Bow_Rig_Finish:R_Bow4
+    100064: Elf_Bow_Rig_Finish:R_Bow5
+    100066: Elf_Bow_Rig_Finish:Root
+    100068: Elf_Bow_Rig_Finish:String_Bottom_IK
+    100070: Elf_Bow_Rig_Finish:String_Top_IK
+    400000: Arrow1
+    400002: Arrow10
+    400004: Arrow2
+    400006: Arrow3
+    400008: Arrow4
+    400010: Arrow5
+    400012: Arrow6
+    400014: Arrow7
+    400016: Arrow8
+    400018: Arrow9
+    400020: Arrows
+    400022: Bow_Bag_Arrows
+    400024: Bow_Set:Bow_Bag_OBJ
+    400026: //RootNode
+    400028: Elf_Bow_Rig
+    400030: Elf_Bow_Rig_CTRL
+    400032: Elf_Bow_Rig_Finish:Bow
+    400034: Elf_Bow_Rig_Finish:Bow 1
+    400036: Elf_Bow_Rig_Finish:Bow_Bottom_IK
+    400038: Elf_Bow_Rig_Finish:BOw_TOp_IK
+    400040: Elf_Bow_Rig_Finish:Elf_Bow_Skeletons
+    400042: Elf_Bow_Rig_Finish:joint1
+    400044: Elf_Bow_Rig_Finish:joint2
+    400046: Elf_Bow_Rig_Finish:L_Bow1
+    400048: Elf_Bow_Rig_Finish:L_Bow2
+    400050: Elf_Bow_Rig_Finish:L_Bow3
+    400052: Elf_Bow_Rig_Finish:L_Bow4
+    400054: Elf_Bow_Rig_Finish:L_Bow5
+    400056: Elf_Bow_Rig_Finish:R_Bow1
+    400058: Elf_Bow_Rig_Finish:R_Bow2
+    400060: Elf_Bow_Rig_Finish:R_Bow3
+    400062: Elf_Bow_Rig_Finish:R_Bow4
+    400064: Elf_Bow_Rig_Finish:R_Bow5
+    400066: Elf_Bow_Rig_Finish:Root
+    400068: Elf_Bow_Rig_Finish:String_Bottom_IK
+    400070: Elf_Bow_Rig_Finish:String_Top_IK
+    2100000: Bow_Set1
+    2100002: Arrow_PBR
+    2100004: Bow_Set4
+    2300000: Arrow10
+    2300002: Arrow2
+    2300004: Arrow3
+    2300006: Arrow4
+    2300008: Arrow5
+    2300010: Arrow6
+    2300012: Arrow7
+    2300014: Arrow8
+    2300016: Arrow9
+    2300018: Bow_Set:Bow_Bag_OBJ
+    3300000: Arrow10
+    3300002: Arrow2
+    3300004: Arrow3
+    3300006: Arrow4
+    3300008: Arrow5
+    3300010: Arrow6
+    3300012: Arrow7
+    3300014: Arrow8
+    3300016: Arrow9
+    3300018: Bow_Set:Bow_Bag_OBJ
+    4300000: Bow_Set:Bow_Bag_OBJ
+    4300002: Arrow3
+    4300004: Arrow4
+    4300006: Arrow5
+    4300008: Arrow6
+    4300010: Arrow7
+    4300012: Arrow8
+    4300014: Arrow9
+    4300016: Arrow10
+    4300018: Arrow2
+    4300020: Elf_Bow_Rig_Finish:Bow
+    9500000: //RootNode
+    13700000: Elf_Bow_Rig_Finish:Bow 1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arrow_PBR
+    second: {fileID: 2100000, guid: 53c3763e3f4e3894fbcf08fb48c3ecf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bow_Set1
+    second: {fileID: 2100000, guid: c4230ae8520054244957787e664dca49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bow_Set4
+    second: {fileID: 2100000, guid: 053e38b7d30765d47909c5dc0510c35f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
