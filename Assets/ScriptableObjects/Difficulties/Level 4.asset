@@ -15,6 +15,6 @@ MonoBehaviour:
   TimeLimit: 30
   InitialEnemySpawnsPerTarget: 1
   EnemySpawnInterval: 8
-  EnemyHealth: 200
-  EnemyAttackStrength: 20
+  EnemyHealth: 100
+  EnemyAttackStrength: 8
   EnemyAttackInterval: 3

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeLimit: 30
   InitialEnemySpawnsPerTarget: 1
-  EnemySpawnInterval: 20
-  EnemyHealth: 500
-  EnemyAttackStrength: 10
+  EnemySpawnInterval: 10
+  EnemyHealth: 200
+  EnemyAttackStrength: 4
   EnemyAttackInterval: 3
