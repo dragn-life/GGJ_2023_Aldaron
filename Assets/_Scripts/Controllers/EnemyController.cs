@@ -17,7 +17,6 @@ public class EnemyController : MonoBehaviour, IPooledObject, IDamageable
 
   public DifficultyManagerSO difficultyManager;
 
-  [SerializeField] private GameObject spawnParticle;
   [SerializeField] private GameObject deathParticle;
 
   [SerializeField] private Transform destination;
@@ -182,15 +181,15 @@ public class EnemyController : MonoBehaviour, IPooledObject, IDamageable
     DamageableTarget?.TakeDamage(difficultyManager.CurrentDifficulty().EnemyAttackStrength);
   }
 
-  public void PlayDeathEffects()
+  public void PlayDeathEffects(float playTime)
   {
-    // Instantiate(deathParticle, transform);
+    GameObject particle = Instantiate(deathParticle, transform);
+    Destroy(particle, playTime);
   }
 
   public void PlaySpawnEffects(float playTime)
   {
-    // GameObject particle = Instantiate(spawnParticle, transform);
-    // Destroy(particle, playTime);
+    // no-op
   }
 
   public void FreezeAnimation()
