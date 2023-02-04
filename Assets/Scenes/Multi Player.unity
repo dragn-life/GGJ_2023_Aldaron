@@ -155,7 +155,7 @@ MonoBehaviour:
   pools:
   - tag: Enemy
     prefab: {fileID: 666084786838082493, guid: 0252ad092c226430791f91fcbba4e9f7, type: 3}
-    size: 50
+    size: 15
 --- !u!4 &3200995
 Transform:
   m_ObjectHideFlags: 0
@@ -16282,7 +16282,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468052146}
-  m_LocalRotation: {x: 0.25666797, y: -0.000000016629963, z: 0.0000000044163264, w: 0.9664997}
+  m_LocalRotation: {x: 0.25666797, y: 0.00000001662996, z: -0.0000000044163255, w: 0.9664997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
