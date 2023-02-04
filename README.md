@@ -13,19 +13,19 @@ Note: Press Escape to release the mouse and escape again to capture it.
 
 Gameplay
 
-![Gameplay](Screenshots/Aldaron_0_GameplaySS.jpg)
+![Gameplay](Screenshots/PNGs/Aldaron_0_GameplaySS.png)
 
 Select Game Mode
-![Gameplay](Screenshots/Aldaron_1_WelcomeScreen.jpg)
+![Gameplay](Screenshots/PNGs/Aldaron_1_WelcomeScreen.png)
 
 Starting a Level
-![Gameplay](Screenshots/Aldaron_2_EnteringLevel.jpg)
+![Gameplay](Screenshots/PNGs/Aldaron_2_EnteringLevel.png)
 
 Winning a Level
-![Gameplay](Screenshots/Aldaron_3_Victory.jpg)
+![Gameplay](Screenshots/PNGs/Aldaron_3_Victory.png)
 
 Losing
-![Gameplay](Screenshots/Aldaron_4_GameOver.jpg)
+![Gameplay](Screenshots/PNGs/Aldaron_4_GameOver.png)
 
 ## Credits
 * Adam - Lead Developer
